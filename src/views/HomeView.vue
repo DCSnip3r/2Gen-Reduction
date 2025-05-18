@@ -1,12 +1,16 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
-import VisualCube from '../components/VisualCube.vue'
+import { ref } from 'vue'
+// If you have a markdown renderer, import it here. Otherwise, just show the text for now.
+import methodOverview from '../content/methodOverview.md?raw'
+const overview = ref(methodOverview)
 </script>
 
 <template>
   <main>
-    <TheWelcome />
-    <VisualCube case="RUR'U'R'U2RUR'UR2U2R'y2" pllType="Ca" stageMask="" :size="200" />
-    <VisualCube case="RUR'U'R'U2RUR'UR2U2R'y2" pllType="Cb" stageMask="ocell" :size="200" />
+    <h1>2Gen-Reduction Method</h1>
+    <div style="max-width: 700px; margin: 0 auto;">
+      <pre style="white-space: pre-wrap;">{{ overview }}</pre>
+      <!-- Replace <pre> with a markdown renderer if you add one later -->
+    </div>
   </main>
 </template>
