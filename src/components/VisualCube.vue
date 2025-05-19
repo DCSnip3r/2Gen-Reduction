@@ -91,7 +91,7 @@ function pllArrows(type) {
             return edgeSwapArrows(['1', '7']) + ',' + edgeSwapArrows(['5', '3'])
         // 3-cycle corner presets
         case 'B':
-            return cornerSwapArrows('U0', 'U6')
+            return cornerSwapArrows('U0', 'U2')
         case 'L':
             return cornerSwapArrows('U0', 'U6')
         case 'F':

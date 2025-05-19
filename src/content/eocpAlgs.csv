@@ -1,0 +1,19 @@
+EO Case,Corner Cycle ,case_id,Algorithm,STM,QTM,Subcase Frequency,Total Frequency,Avg STM (weighted),Avg QTM (weighted)
+Solved,Solved,C,Skip,0,0,16.67%,3.33%,,
+Solved,FL BL swap,L, R U' L' U R' U' L,7,7,66.67%,13.33%,,
+Solved,Diag Swap,D,[R2 U F' : R U2 R' U' R U' R'] ,14,14,16.67%,3.33%,7.00,7.00
+"UF, UR",Correctly Permuted,C,r U R' U R U2 r',7,8,16.67%,6.67%,,
+"UF, UR",LF RF Swap - Clockwise (fixed FR),F,(R' F R F') (U' F' U F),8,8,16.67%,6.67%,,
+"UF, UR",RF RB swap - Counterclockwise (fixed FR),R,(F R' F' R) (U R U' R'),8,8,16.67%,6.67%,,
+"UF, UR",BL BR Swap:,B,[U] (R U2 R' U2) (R' F R F'),8,10,16.67%,6.67%,,
+"UF, UR",FL BL Swap:,L,[U2] (R' U2 R U2) (R B' R' B) or            (L' U2 L U2) (L F' L' F) ,8,10,16.67%,6.67%,,
+"UF, UR",Diag Swap: ,D,F R U R' U' F',6,6,16.67%,6.67%,7.50,8.33
+"UF, UB",All Correct,C,F (U R U' R') (U R U' R') F',10,10,16.67%,3.33%,,
+"UF, UB",FL FR Swap,F,(R U R' U') (R' F R F') ,8,8,33.33%,6.67%,,
+"UF, UB",FR BR Swap,R,Lw' U Lw U Lw' U' Lw (F U' F'),10,10,33.33%,6.67%,,
+"UF, UB",Diag swap,D,F U R U' R' F',6,6,16.67%,3.33%,8.67,8.67
+"UF, UR, UB, UL",All Correct,,F (R U R' U') [S] (R U R' U') F',11,12,16.67%,3.33%,,
+"UF, UR, UB, UL",Diag swap,,L F R U2 R' U2 R U2 R' F' L',11,13,16.67%,3.33%,,
+"UF, UR, UB, UL",FL FR Swap,,R U' R2 D' r U r' D R2 U R',11,13,66.67%,13.33%,11.00,12.83
+,,,,,Total,,100.00%,8.33,9.03
+,,,,,,,,Average Moves,
