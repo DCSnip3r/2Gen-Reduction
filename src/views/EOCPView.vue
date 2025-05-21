@@ -16,7 +16,7 @@
                         <td v-for="corner in cornerCases" :key="corner.key">
                             <div v-for="(alg, i) in getAlgsByEoAndCorner(eo.key, corner.key)" :key="i" class="alg-cell">
                                 <VisualCube :pllType="corner.key" :case="alg.moves" :size="120"
-                                    style="margin-bottom: 0.5rem;" />
+                                    :faceletConfig="'cpeoll'" style="margin-bottom: 0.5rem;" />
                                 <div><code>{{ alg.moves }}</code></div>
                                 <div v-if="alg.name" style="font-size: 0.9em; color: #888;">{{ alg.name }}</div>
                             </div>
@@ -54,11 +54,11 @@
                     style="display: flex; flex-direction: column; align-items: center; flex: 1; border-right: 1px solid #bbb; padding-right: 2rem;">
                     <div style="display: flex; gap: 2rem;">
                         <div style="text-align: center;">
-                            <VisualCube :pllType="'Ca'" :case="'U U\''" :size="150" />
+                            <VisualCube :pllType="'Ca'" :case="'U U\''" :size="150" :faceletConfig="'cpeoll'" />
                             <div style="font-size: 0.95em; margin-top: 0.3em;">Corner cycle: <b>Ca</b></div>
                         </div>
                         <div style="text-align: center;">
-                            <VisualCube :pllType="'R'" :case="'U U\''" :size="150" />
+                            <VisualCube :pllType="'R'" :case="'U U\''" :size="150" :faceletConfig="'cpeoll'" />
                             <div style="font-size: 0.95em; margin-top: 0.3em;">Corner cycle: <b>R</b></div>
                         </div>
                     </div>
@@ -66,11 +66,11 @@
                 <div style="display: flex; flex-direction: column; align-items: center; flex: 1; padding-left: 2rem;">
                     <div style="display: flex; gap: 2rem;">
                         <div style="text-align: center;">
-                            <VisualCube :pllType="'Cb'" :case="'U U\''" :size="150" />
+                            <VisualCube :pllType="'Cb'" :case="'U U\''" :size="150" :faceletConfig="'cpeoll'" />
                             <div style="font-size: 0.95em; margin-top: 0.3em;">Corner cycle: <b>Cc</b></div>
                         </div>
                         <div style="text-align: center;">
-                            <VisualCube :pllType="'F'" :case="'U U\''" :size="150" />
+                            <VisualCube :pllType="'F'" :case="'U U\''" :size="150" :faceletConfig="'cpeoll'" />
                             <div style="font-size: 0.95em; margin-top: 0.3em;">Corner cycle: <b>F</b></div>
                         </div>
                     </div>
@@ -115,9 +115,9 @@ const eoCases = [
 const cornerCases = [
     { key: 'C', label: 'C (Solved)' },
     { key: 'L', label: 'L' },
+    { key: 'B', label: 'B' },
     { key: 'F', label: 'F' },
     { key: 'R', label: 'R' },
-    { key: 'B', label: 'B' },
     { key: 'D', label: 'D' },
 ]
 

@@ -4,8 +4,15 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue'
+
+// Facelet color configurations
+const faceletConfigs = {
+    cpeoll: 'yyyyyyyyyrdrrrrrrrbdbbbbbbbwwwwwwwwwodooooooogdggggggg',
+    default: 'yyyyyyyyyrrrrrrrrrbbbbbbbbbwwwwwwwwwoooooooooggggggggg',
+    // Add more configs here as needed
+}
 
 const props = defineProps({
     case: {
@@ -27,11 +34,15 @@ const props = defineProps({
     size: {
         type: Number,
         default: 200
-    }
+    },
+    faceletConfig: {
+        type: String,
+        required: true,
+    },
 })
 
 // Helper: Arrow for edge swap or cycle
-function edgeSwapArrows(edges, direction = 'cw') {
+function edgeSwapArrows(edges: string[], direction = 'cw') {
     // edges: array of digits as strings, e.g. ['1','5','7']
     // direction: 'cw' (clockwise) or 'ccw' (counterclockwise)
     if (!Array.isArray(edges) || edges.length < 2) return ''
@@ -50,12 +61,12 @@ function edgeSwapArrows(edges, direction = 'cw') {
 }
 
 // Helper: Arrow for corner swap (e.g. U3 <-> U7)
-function cornerSwapArrows(pos1, pos2) {
+function cornerSwapArrows(pos1: string, pos2: string) {
     return `${pos1}${pos2},${pos2}${pos1}`
 }
 
 // Helper: Multiple arrows for common PLL cases
-function pllArrows(type) {
+function pllArrows(type: string) {
     switch (type) {
         case 'Ua':
             // 3-cycle: U1->U5->U7->U1 (cw)
@@ -110,7 +121,7 @@ function pllArrows(type) {
     }
 }
 
-function cornerArrows(type) {
+function cornerArrows(type: string) {
     switch (type) {
         case 'B':
             return cornerSwapArrows('U0', 'U3')
@@ -144,6 +155,7 @@ const visualCubeUrl = computed(() => {
         computedArw.value ? `arw=${encodeURIComponent(computedArw.value)}` : '',
         props.stageMask ? `stage=${encodeURIComponent(props.stageMask)}` : '',
         'bg=181818',
+        `fc=${faceletConfigs[props.faceletConfig as keyof typeof faceletConfigs]}`,
     ].filter(Boolean).join('&')
     return `${base}&${params}`
 })
