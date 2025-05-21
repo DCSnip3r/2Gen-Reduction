@@ -165,7 +165,7 @@ export const eocpAlgs: EOCPAlg[] = [
     label: 'All Correct',
     eo_case: 'UF, UR, UB, UL',
     caseId: 'C',
-    algs: [{ moves: "F (R U R' U') [S] (R U R' U') F'" }, {moves: "r U R' U2' R U2' r' U2' r U' r'"}],
+    algs: [{ moves: "F (R U R' U') [S] (R U R' U') F'" }, {moves: "Rw U R' U2' R U2' Rw' U2' Rw U' Rw'"}],
     stm: 11,
     qtm: 12,
     subcaseFrequency: '16.67%',
