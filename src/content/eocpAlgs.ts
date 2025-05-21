@@ -41,7 +41,7 @@ export const eocpAlgs: EOCPAlg[] = [
     label: 'Diag Swap',
     eo_case: 'Solved',
     caseId: 'D',
-    algs: [{ moves: "Rw U2' R2 F R F' Lw F2' L" }],
+    algs: [{ moves: "Rw U2' R2 F R F' Lw F2' L'" }],
     stm: 14,
     qtm: 14,
     subcaseFrequency: '16.67%',
